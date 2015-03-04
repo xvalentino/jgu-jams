@@ -3,7 +3,9 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
-    @songs = current_user.songs
+    @songs = []
+    @songs = current_user.songs if current_user
+
   end
 
   def show
