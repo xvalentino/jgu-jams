@@ -1,3 +1,4 @@
+<h1>Hello <%= current_user.username %>.</h1>
 <% @songs.each do |song| %>
   <p><%= link_to song.title, song %></p>
 <% end %>

@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
-    @songs = Song.all
+    @songs = current_user.songs
   end
 
   def show
@@ -15,6 +15,7 @@ class SongsController < ApplicationController
 
   def create
     song = Song.new(song_params)
+    song.user_id = session[:user_id]
     if song.save
       redirect_to song
     else

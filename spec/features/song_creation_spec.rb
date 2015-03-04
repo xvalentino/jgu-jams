@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User creates a song' do
+RSpec.describe 'can create a song' do
   context 'with valid attributes' do
     it 'saves and displays a song title' do
       visit new_song_path
