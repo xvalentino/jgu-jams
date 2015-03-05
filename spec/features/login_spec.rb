@@ -11,6 +11,7 @@ describe 'login function' do
     click_link_or_button 'Log in'
     expect(page).to have_content('tino signed in successfully.')
     expect(page).to have_content('Hello tino.')
+    expect(page).to have_content('Log out')
   end
 
   it 'should flash negative notice with bad login' do
